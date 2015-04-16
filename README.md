@@ -28,3 +28,8 @@ This creates main.js in the bundle dir, which you can then ship off to a server.
 
  - [jspm-cli/Getting-Started](https://github.com/jspm/jspm-cli/wiki/Getting-Started)
  - [jspm-cli/Production-Workflows](https://github.com/jspm/jspm-cli/wiki/Production-Workflows)
+
+## Takeaways / Followup questions
+
+ - It seems crazy complicated, but it works.
+ - Use it unbundled in production, with a CDN? I would love to be able to deploy unmodified source to production, without including deps.
