@@ -1,6 +1,6 @@
 # Hello, System.js
 
-React hello world, with System.js and Babel.
+React hello world, with [jspm](http://jspm.io/) / [System.js](https://github.com/systemjs/systemjs) and [Babel](https://babeljs.io/).
 
 ## Install
 
@@ -24,3 +24,7 @@ npm run bundle
 
 This creates main.js in the bundle dir, which you can then ship off to a server.
 
+## Resources
+
+ - [jspm-cli/Getting-Started](https://github.com/jspm/jspm-cli/wiki/Getting-Started)
+ - [jspm-cli/Production-Workflows](https://github.com/jspm/jspm-cli/wiki/Production-Workflows)
