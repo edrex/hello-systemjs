@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "browser-sync start --server --files **/*",
+    "bundle": "jspm bundle-sfx main bundle/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

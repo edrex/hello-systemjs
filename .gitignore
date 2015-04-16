@@ -1,1 +1,3 @@
 jspm_packages
+*.map
+bundle/*.js

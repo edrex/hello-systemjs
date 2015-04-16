@@ -13,5 +13,14 @@ jspm install
 ## Run
 
 ```
-npm run
+npm start
 ```
+
+## Bundle
+
+```
+npm run bundle
+```
+
+This creates main.js in the bundle dir, which you can then ship off to a server.
+
