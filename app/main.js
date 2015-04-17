@@ -1,8 +1,9 @@
 "use babel";
 
-import React from 'react'
+import React from 'react';
+import Hello from 'hello';
 
 React.render(
-  <h1>Hello world!</h1>,
+  <Hello/>,
   document.getElementById('main')
 );
