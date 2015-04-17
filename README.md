@@ -31,5 +31,6 @@ This creates main.js in the bundle dir, which you can then ship off to a server.
 
 ## Takeaways / Followup questions
 
+- ES6 (and 7 when it lands), JSX, and other source languages translated/piled at runtime.
  - It seems crazy complicated, but it works.
  - Use it unbundled in production, with a CDN? I would love to be able to deploy unmodified source to production, without including deps.
