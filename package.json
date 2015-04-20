@@ -16,6 +16,8 @@
   "jspm": {
     "directories": {},
     "dependencies": {
+      "bootstrap": "github:twbs/bootstrap@^3.3.4",
+      "css": "github:systemjs/plugin-css@^0.1.9",
       "react": "npm:react@^0.13.1"
     },
     "devDependencies": {
