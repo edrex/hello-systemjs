@@ -2,6 +2,8 @@
 
 React hello world, with [jspm](http://jspm.io/) / [System.js](https://github.com/systemjs/systemjs) and [Babel](https://babeljs.io/).
 
+Demo at https://edrex.github.io/hello-systemjs/
+
 ## What's the intention here?
 
 Test out a development workflow down using System.js, react/jsx, and... other stuff.
