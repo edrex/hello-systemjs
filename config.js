@@ -9,8 +9,8 @@ System.config({
   },
   "paths": {
     "*": "app/*.js",
-    "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
+    "github:*": "https://github.jspm.io/*.js",
+    "npm:*": "https://npm.jspm.io/*.js"
   }
 });
 
@@ -122,3 +122,4 @@ System.config({
     }
   }
 });
+
