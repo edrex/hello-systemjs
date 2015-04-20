@@ -4,6 +4,6 @@ import React from 'react';
 import Hello from 'hello';
 
 React.render(
-  <Hello/>,
+  <Hello name="JSPM and System.js"/>,
   document.getElementById('main')
 );

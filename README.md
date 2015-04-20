@@ -13,6 +13,10 @@ This workflow promises a number of benefits:
  - use es6, JSX, Jade, etc without needing to run a build every time I make a change (WIN WIN WIN WIN)
  - Multiple options for prod deployment, including a deps CDN (even more win!) and pretty flexible bundling.
 
+## Things to try
+
+ - [x] es6 classes for react components
+ - [ ] css loading with module
 
 ## Run
 
