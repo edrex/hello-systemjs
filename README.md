@@ -16,7 +16,8 @@ This workflow promises a number of benefits:
 ## Things to try
 
  - [x] es6 classes for react components
- - [ ] css loading with module
+ - [x] css loading with module
+ - [ ] spin off Hello component into a separate repo
 
 ## Run
 
