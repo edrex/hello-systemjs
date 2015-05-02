@@ -1,41 +1,50 @@
 # Hello, System.js
 
-React hello world, with [jspm](http://jspm.io/) / [System.js](https://github.com/systemjs/systemjs) and [Babel](https://babeljs.io/).
+Browser app development workflow testbed, dressed  as [Hello World](https://edrex.github.io/hello-systemjs/). The core technologies are [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), es6-module-loader, and [Babel](https://babeljs.io/).
 
-Demo at https://edrex.github.io/hello-systemjs/
+- [x] A real module system for the browser.
+- [x] compile es6, JSX, Jade, etc clientside
+- [x] Load external modules from an HTTP/2 CDN that proxies Github and NPM.
+- [x] ES6 and JSX => ES5 syntax transform (Babel)
+- [x] React components defined as ES6 classes
+- [x] Hello component is in a separate repo and  injects its own CSS via the loader.
+- [ ] Testing. Karma, Jasmine?
 
-## What's the intention here?
+[Multiple workflows](https://github.com/jspm/jspm-cli/wiki/Production-Workflows) allow loading of dependencies
+  - [x] individually, from local `jspm_modules`
+  - [x] from an HTTP/2 CDN
+    - [x] optionally with flat load order via `jspm depcache main`, to keep the number of round trips constant
+  - [x] as factor bundles with [arithmetic](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-bundle-with-arithmetic), via `jspm bundle`
+  - [x] as a standalone bundle, via `jspm bundle-sfx`
 
-Test out a development workflow down using System.js, react/jsx, and... other stuff.
-
-This workflow promises a number of benefits:
-
- - use es6, JSX, Jade, etc without needing to run a build every time I make a change (WIN WIN WIN WIN)
- - Multiple options for prod deployment, including a deps CDN (even more win!) and pretty flexible bundling.
-
-## Things to try
-
- - [x] es6 classes for react components
- - [x] css loading with module
- - [ ] spin off Hello component into a separate repo
 
 ## Run
 
-
-Start an `http` server and open `index.html`. To use browser-sync with live reload support:
+Since external dependencies are loaded from a CDN, you can just expose this directory via HTTP. e.g:
 
 ```
-npm install -g browser-sync
-npm start
+npm install -g http-server && http-server
 ```
 
-Dependencies are loaded from the jspm.io CDN. The nice thing about this workflow is it doesn't require any local build tooling to do development. Just fire up an HTTP server, a browser, and a text editor and start writing ES6 and JSX.
+or
 
-## Using JSPM to install deps locally
+```
+browser-sync start --server --files **/*
+```
 
+
+## Local development
+
+You only need `jspm` to manipulate dependencies in `config.js` and download packages. Otherwise you can just edit files and reload your browser.
+
+To install jspm:
 ```
 export PATH=./node_modules/bin:$PATH
 npm install
+```
+
+Download dependencies to `jspm_packages`
+```
 jspm install
 ```
 
@@ -48,31 +57,15 @@ This will switch the dependency loading mode from remote to local. To switch it 
 To bundle all deps into a single, standalone file, run:
 
 ```
-npm run bundle
+jspm bundle-sfx main bundle/main.js --minify
 ```
 
-This creates main.js in the bundle dir, which you can then ship off to a server.
+`bundle/index.html` loads the bundle.
 
 ## Resources
 
  - [jspm-cli/Getting-Started](https://github.com/jspm/jspm-cli/wiki/Getting-Started)
- - [jspm-cli/Production-Workflows](https://github.com/jspm/jspm-cli/wiki/Production-Workflows)
-
-## Takeaways 
-
-- Everything except `config.js` mutation (by jspm) happens **client-side**.
-- Loads dependencies
-  - individually, for dev or **http/2** prod
-    - from same origin (`jspm install`)
-    - or from a CDN (`jspm setmode remote`, `inject`)
-    - optionally with flat load order, to keep the number of round trips constant (`jspm depcache main`)
-  - as bundles, for http/1.1 prod
-    - with [arithmetic](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-bundle-with-arithmetic)
-    - and on-demand loading.
-- Also supports standalone bundles.
-- Pretty easy to use
 
 ## Followup questions
 
- - Curious whether the functions of config.js could be made to run in the browser, to allow a pure client-side IDE acting on a REST document store.
- - How "hackable" is the loader? It seems to be very extensible, via [hooks](https://github.com/ModuleLoader/es6-module-loader/wiki/Extending-the-ES6-Loader)
+ - **How hackable is the loader?** It seems to be very extensible, via [hooks](https://github.com/ModuleLoader/es6-module-loader/wiki/Extending-the-ES6-Loader).
