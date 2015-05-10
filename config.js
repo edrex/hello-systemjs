@@ -8,8 +8,8 @@ System.config({
   },
   "paths": {
     "*": "app/*.js",
-    "github:*": "jspm_packages/github/*.js",
-    "npm:*": "jspm_packages/npm/*.js"
+    "github:*": "https://github.jspm.io/*.js",
+    "npm:*": "https://npm.jspm.io/*.js"
   }
 });
 
@@ -20,22 +20,18 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.4",
     "core-js": "npm:core-js@0.8.3",
     "css": "github:systemjs/plugin-css@0.1.10",
-    "edrex/hello-component": "github:edrex/hello-component@0.1.1",
-    "hello": "github:edrex/hello-component@0.1.6",
-    "react": "npm:react@0.13.2",
-    "github:edrex/hello-component@0.1.1": {
+    "edrex/hello-component": "github:edrex/hello-component@0.1.7",
+    "hello": "github:edrex/hello-component@0.1.7",
+    "react": "npm:react@0.13.3",
+    "github:edrex/hello-component@0.1.7": {
       "css": "github:systemjs/plugin-css@0.1.10",
-      "react": "npm:react@0.13.2"
-    },
-    "github:edrex/hello-component@0.1.6": {
-      "css": "github:systemjs/plugin-css@0.1.10",
-      "react": "npm:react@0.13.2"
+      "react": "npm:react@0.13.3"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
     "github:jspm/nodelibs-buffer@0.1.0": {
-      "buffer": "npm:buffer@3.2.0"
+      "buffer": "npm:buffer@3.2.2"
     },
     "github:jspm/nodelibs-events@0.1.0": {
       "events-browserify": "npm:events-browserify@0.0.1"
@@ -75,7 +71,7 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0"
     },
     "github:twbs/bootstrap@3.3.4": {
-      "jquery": "github:components/jquery@2.1.3"
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:amdefine@0.1.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
@@ -86,9 +82,9 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:buffer@3.2.0": {
+    "npm:buffer@3.2.2": {
       "base64-js": "npm:base64-js@0.0.8",
-      "ieee754": "npm:ieee754@1.1.4",
+      "ieee754": "npm:ieee754@1.1.5",
       "is-array": "npm:is-array@1.0.1"
     },
     "npm:clean-css@3.1.9": {
@@ -151,7 +147,7 @@ System.config({
     "npm:punycode@1.3.2": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
-    "npm:react@0.13.2": {
+    "npm:react@0.13.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "envify": "npm:envify@3.4.0",
       "process": "github:jspm/nodelibs-process@0.1.1"

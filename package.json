@@ -18,7 +18,7 @@
     "dependencies": {
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "css": "github:systemjs/plugin-css@^0.1.9",
-      "edrex/hello-component": "github:edrex/hello-component@0.1.1",
+      "edrex/hello-component": "github:edrex/hello-component@^0.1.1",
       "hello": "github:edrex/hello-component@^0.1.0",
       "react": "npm:react@^0.13.1"
     },
