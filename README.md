@@ -1,6 +1,6 @@
 # Hello, System.js
 
-This project is about validating a browser app development workflow using [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), es6-module-loader, and [Babel](https://babeljs.io/). 
+This project is about validating a browser app development workflow using [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), [es6-module-loader](https://github.com/ModuleLoader/es6-module-loader), and [Babel](https://babeljs.io/).
 
 Some benefits of this approach:
 
@@ -10,7 +10,7 @@ Some benefits of this approach:
   - individually, with external dependencies loading either from a same origin cache (`jspm_modules`) or from jspm.io HTTP/2 CDN, which proxies Github and NPM
   - as local factor bundles with [arithmetic](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-bundle-with-arithmetic) (`jspm bundle`)
   - as a monolithic/standalone bundle (`jspm bundle-sfx`)
-- `system.conf.js` is a single place to describe all dependency versions, and allows running multiple versions of a library if absolutely needed. Unless you want to override something, JSPM will smartly manage this file for you (Similar to `Gemfile.lock` in Ruby's [Bundler](http://bundler.io/)).
+- `config.js` is a single place to describe your current dependency tree, like `Gemfile.lock` in Ruby's [Bundler](http://bundler.io/). It allows locking/overriding versions and even mapping dependencies from other registries/module systems as needed. It's enormously useful. Unless you want to override something, JSPM will smartly manage this file for you.
 
 ## Task list
 
