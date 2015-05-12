@@ -7,7 +7,7 @@ System.config({
     "blacklist": []
   },
   "paths": {
-    "*": "app/*.js",
+    "*": "*.js",
     "github:*": "https://github.jspm.io/*.js",
     "npm:*": "https://npm.jspm.io/*.js"
   }
@@ -200,4 +200,3 @@ System.config({
     }
   }
 });
-
