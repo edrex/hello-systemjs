@@ -5,19 +5,18 @@ This project is about validating a browser app development workflow using [JSPM]
 Some benefits of this approach:
 
 - Use ES6 features right now, with support back to IE8
-- A real module system for the browser ()
-- Frictionless interop between ES6, NPM (CommonJS), and AMD modules
-- A flexible palette of [dependency loading strategies](https://github.com/jspm/jspm-cli/wiki/Production-Workflows) to fit your project's requirements:
+- Use real module systems in the browser, with **frictionless** interop between ES6, NPM (CommonJS), and AMD modules.
+- A flexible palette of dependency loading [strategies](https://github.com/jspm/jspm-cli/wiki/Production-Workflows) to fit your project's requirements:
   - individually, with external dependencies loading either from a same origin cache (`jspm_modules`) or from jspm.io HTTP/2 CDN, which proxies Github and NPM
   - as local factor bundles with [arithmetic](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-bundle-with-arithmetic) (`jspm bundle`)
   - as a monolithic/standalone bundle (`jspm bundle-sfx`)
-- `system.conf.js`
+- `system.conf.js` is a single place to describe all dependency versions, and allows running multiple versions of a library if absolutely needed. Unless you want to override something, JSPM will smartly manage this file for you (Similar to `Gemfile.lock` in Ruby's [Bundler](http://bundler.io/)).
 
 ## Task list
 
 - [x] React components defined as ES6 classes
 - [x] Hello component is in a [separate repo](https://github.com/edrex/hello-component) and  injects its own CSS via the loader.
-- [ ] Testing. See [hello-component](https://github.com/edrex/hello-component)
+- [x] Testing. See [hello-component](https://github.com/edrex/hello-component) for more test goodness.
 
 ## Run
 
@@ -67,19 +66,18 @@ jspm bundle-sfx main bundle/main.js --minify
 
 ## Testing
 
-- https://github.com/Workiva/karma-jspm
-- https://github.com/rolaveric/karma-systemjs
-- also there are babel and traceur plugins. **which?**
+Testing setup is cribbed from the yo [jspm-lib](https://github.com/djindjic/generator-jspm-lib) generator, and uses 
 
-- http://www.brassington.io/javascript/jasmine-with-systemjs/
-- http://www.uxebu.com/blog/2014/11/es6-tdd-work-traceur-mocha-sinon/
+ - Karma test runner
+ - Mocha specs, Chai assertions
+ - [karma-jspm](https://github.com/Workiva/karma-jspm) to enable loading test/app code using SystemJS. Another very similar option is [rolaveric/karma-systemjs](https://github.com/rolaveric/karma-systemjs).
 
-https://github.com/lookfirst/systemjs-seed/blob/master/karma.conf.js
-
-Mocking deps:
+It's possible to use SystemJS to mock modules. 
 
 - https://github.com/systemjs/systemjs/issues/366
-- https://github.com/micahasmith/babel-test
+- https://github.com/micahasmith/babel-test (and [my fork](https://github.com/edrex/babel-test) made some small changes to get it working).
+
+## Future questions
 
 ### How hackable is the loader?
 
