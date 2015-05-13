@@ -1,40 +1,51 @@
 # Hello, System.js
 
-This project is about validating a browser app development workflow using [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), [es6-module-loader](https://github.com/ModuleLoader/es6-module-loader), and [Babel](https://babeljs.io/).
+[![Build Status](https://secure.travis-ci.org/edrex/hello-component.png?branch=master)](https://travis-ci.org/edrex/hello-component) | [Demo](https://edrex.github.io/hello-systemjs/)
 
-Some benefits of this approach:
+In this project, I validate a browser app development workflow using [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), [es6-module-loader](https://github.com/ModuleLoader/es6-module-loader), and [Babel](https://babeljs.io/).
 
-- Use ES6 features right now, with support back to IE8
-- Use real module systems in the browser, with **frictionless** interop between ES6, NPM (CommonJS), and AMD modules.
-- A flexible palette of dependency loading [strategies](https://github.com/jspm/jspm-cli/wiki/Production-Workflows) to fit your project's requirements:
+The pitch:
+
+- Use ES6 features is current browsers
+- Leverage modules in the browser, with **frictionless** interop between ES6, CommonJS, and AMD modules.
+- Several dependency-loading [strategies](https://github.com/jspm/jspm-cli/wiki/Production-Workflows) to fit your project's requirements:
   - individually, with external dependencies loading either from a same origin cache (`jspm_modules`) or from jspm.io HTTP/2 CDN, which proxies Github and NPM
   - as local factor bundles with [arithmetic](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-bundle-with-arithmetic) (`jspm bundle`)
   - as a monolithic/standalone bundle (`jspm bundle-sfx`)
 - `config.js` is a single place to describe your current dependency tree, like `Gemfile.lock` in Ruby's [Bundler](http://bundler.io/). It allows locking/overriding versions and even mapping dependencies from other registries/module systems as needed. It's enormously useful. Unless you want to override something, JSPM will smartly manage this file for you.
 
-## Task list
-
-- [x] React components defined as ES6 classes
-- [x] Hello component is in a [separate repo](https://github.com/edrex/hello-component) and  injects its own CSS via the loader.
-- [x] Testing. See [hello-component](https://github.com/edrex/hello-component) for more test goodness.
-
-## Run
-
-[View the demo online ](https://edrex.github.io/hello-systemjs/) or fire up an HTTP server to try it locally.
-
-```
-npm install -g http-server && http-server
-```
-
-
 ## Local development
 
-You only need `jspm` to manipulate dependencies in `config.js` and download packages. Otherwise you can just edit files and reload your browser.
+### Run
 
-To install jspm:
+Just serve this directory via HTTP, like
+
 ```
+npm install -g serve && serve
+```
+
+### Install dependencies
+
+```shell
 export PATH=./node_modules/bin:$PATH
 npm install
+```
+
+This just installs dev dependencies. App dependencies are still loaded from a remote CDN.
+
+```shell
+# switch to local mode
+jspm set-mode local
+jspm install
+
+# back
+jspm set-mode remote
+```
+
+### Tests
+
+```
+karma start
 ```
 
 Download dependencies to `jspm_packages`
@@ -47,12 +58,6 @@ This will switch the dependency loading mode from remote to local. To switch it 
 ```
 jspm setmode remote
 ```
-
-### Working with local copies of dependencies
-
-`jspm link` (each time you make a change to the dependency)
-
-To run automatically on each change, see my comment [here](https://github.com/jspm/jspm-cli/issues/481#issuecomment-95681248).
 
 ## Bundle
 
@@ -70,14 +75,15 @@ Testing setup is cribbed from the yo [jspm-lib](https://github.com/djindjic/gene
 
  - Karma test runner
  - Mocha specs, Chai assertions
- - [karma-jspm](https://github.com/Workiva/karma-jspm) to enable loading test/app code using SystemJS. Another very similar option is [rolaveric/karma-systemjs](https://github.com/rolaveric/karma-systemjs).
+ - [karma-jspm](https://github.com/Workiva/karma-jspm) to load test/app code using SystemJS.
 
-It's possible to use SystemJS to mock modules. 
+It's [possible](https://github.com/systemjs/systemjs/issues/366) to use SystemJS to [mock modules](https://github.com/edrex/babel-test). 
 
-- https://github.com/systemjs/systemjs/issues/366
-- https://github.com/micahasmith/babel-test (and [my fork](https://github.com/edrex/babel-test) made some small changes to get it working).
+## Q&A
 
-## Future questions
+### How to work with local copies of dependencies?
+
+Read up on [jspm link](https://github.com/jspm/jspm-cli/wiki/Linking). You have to re-run `jspm link` each time you make a change. [This gulp task](https://github.com/djindjic/generator-jspm-lib/blob/master/app/templates/gulpfile.js) provides a way to automate it.
 
 ### How hackable is the loader?
 
