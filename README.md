@@ -64,7 +64,7 @@ jspm setmode remote
 To bundle all deps into a single, standalone file, run:
 
 ```
-jspm bundle-sfx main bundle/main.js --minify
+jspm bundle-sfx app/main bundle/main.js --minify
 ```
 
 `bundle/index.html` loads the bundle.
