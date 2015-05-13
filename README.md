@@ -4,7 +4,7 @@
 
 In this project, I validate a browser app development workflow using [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), [es6-module-loader](https://github.com/ModuleLoader/es6-module-loader), and [Babel](https://babeljs.io/).
 
-The pitch:
+## The pitch
 
 - Use ES6 features is current browsers
 - Leverage modules in the browser, with **frictionless** interop between ES6, CommonJS, and AMD modules.
@@ -42,49 +42,36 @@ jspm install
 jspm set-mode remote
 ```
 
-### Tests
+### Working with local copies of dependencies
+
+[Read about](https://github.com/jspm/jspm-cli/wiki/Linking) `jspm link`. You have to re-link each time you make a change. [This gulp task](https://github.com/djindjic/generator-jspm-lib/blob/master/app/templates/gulpfile.js) provides a way to automate it.
+
+
+
+## Tests
+
+To run the tests: 
 
 ```
 karma start
 ```
 
-Download dependencies to `jspm_packages`
-```
-jspm install
-```
-
-This will switch the dependency loading mode from remote to local. To switch it back, run:
-
-```
-jspm setmode remote
-```
-
-## Bundle
-
-To bundle all deps into a single, standalone file, run:
-
-```
-jspm bundle-sfx app/main bundle/main.js --minify
-```
-
-`bundle/index.html` loads the bundle.
-
-## Testing
-
-Testing setup is cribbed from the yo [jspm-lib](https://github.com/djindjic/generator-jspm-lib) generator, and uses 
+Setup is cribbed from the [jspm-lib generator](https://github.com/djindjic/generator-jspm-lib), and uses 
 
  - Karma test runner
  - Mocha specs, Chai assertions
  - [karma-jspm](https://github.com/Workiva/karma-jspm) to load test/app code using SystemJS.
 
-It's [possible](https://github.com/systemjs/systemjs/issues/366) to use SystemJS to [mock modules](https://github.com/edrex/babel-test). 
+SystemJS [can](https://github.com/systemjs/systemjs/issues/366) inject [mocked modules](https://github.com/edrex/babel-test). 
 
-## Q&A
+## Bundle
 
-### How to work with local copies of dependencies?
+While I am most interested in deploying without bundling (using the CDN), jspm can also create *factor* and *self-executing* bundles just like with Browserify and Webpack. 
 
-Read up on [jspm link](https://github.com/jspm/jspm-cli/wiki/Linking). You have to re-run `jspm link` each time you make a change. [This gulp task](https://github.com/djindjic/generator-jspm-lib/blob/master/app/templates/gulpfile.js) provides a way to automate it.
+Create a self-executing bundle starting from the `app/main` entry point:
 
-### How hackable is the loader?
+```
+jspm bundle-sfx app/main bundle/main.js --minify
+```
 
-It seems to be very extensible, via [hooks](https://github.com/ModuleLoader/es6-module-loader/wiki/Extending-the-ES6-Loader).
+**Future:** Rename `bundle` &rarr; `dist` and use [html-dist](https://github.com/jackfranklin/html-dist) to create `dist/index.html`.
