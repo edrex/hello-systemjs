@@ -15,10 +15,10 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.1.10",
-    "babel-runtime": "npm:babel-runtime@5.1.10",
+    "babel": "npm:babel-core@5.3.1",
+    "babel-runtime": "npm:babel-runtime@5.3.1",
     "bootstrap": "github:twbs/bootstrap@3.3.4",
-    "core-js": "npm:core-js@0.8.3",
+    "core-js": "npm:core-js@0.9.8",
     "css": "github:systemjs/plugin-css@0.1.10",
     "edrex/hello-component": "github:edrex/hello-component@0.1.7",
     "hello": "github:edrex/hello-component@0.1.7",
@@ -106,7 +106,7 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
-    "npm:core-js@0.8.3": {
+    "npm:core-js@0.9.8": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:core-util-is@1.0.1": {
@@ -200,3 +200,4 @@ System.config({
     }
   }
 });
+
