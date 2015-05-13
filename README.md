@@ -1,6 +1,6 @@
 # Hello, System.js
 
-[![Build Status](https://secure.travis-ci.org/edrex/hello-component.png?branch=master)](https://travis-ci.org/edrex/hello-component) | [Demo](https://edrex.github.io/hello-systemjs/)
+[![Build Status](https://secure.travis-ci.org/edrex/hello-component.png?branch=master)](https://travis-ci.org/edrex/hello-systemjs) | [Demo](https://edrex.github.io/hello-systemjs/)
 
 In this project, I validate a browser app development workflow using [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), [es6-module-loader](https://github.com/ModuleLoader/es6-module-loader), and [Babel](https://babeljs.io/).
 
