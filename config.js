@@ -20,7 +20,6 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.4",
     "core-js": "npm:core-js@0.9.8",
     "css": "github:systemjs/plugin-css@0.1.10",
-    "edrex/hello-component": "github:edrex/hello-component@0.1.7",
     "hello": "github:edrex/hello-component@0.1.7",
     "react": "npm:react@0.13.3",
     "github:edrex/hello-component@0.1.7": {
