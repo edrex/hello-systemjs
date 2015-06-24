@@ -1,14 +1,11 @@
 # Hello, System.js
 
-[![Build Status](https://secure.travis-ci.org/edrex/hello-component.png?branch=master)](https://travis-ci.org/edrex/hello-systemjs) | [Demo](https://edrex.github.io/hello-systemjs/)
+Demonstrates a browser app development workflow using [JSPM](http://jspm.io/) and [System.js](https://github.com/systemjs/systemjs). See the rather silly end product [here](https://edrex.github.io/hello-systemjs/).
 
-In this project, I validate a browser app development workflow using [JSPM](http://jspm.io/), [System.js](https://github.com/systemjs/systemjs), [es6-module-loader](https://github.com/ModuleLoader/es6-module-loader), and [Babel](https://babeljs.io/).
-
-## The pitch
-
-- Use ES6 features is current browsers
-- Leverage modules in the browser, with **frictionless** interop between ES6, CommonJS, and AMD modules.
-- Several dependency-loading [strategies](https://github.com/jspm/jspm-cli/wiki/Production-Workflows) to fit your project's requirements:
+- Use ES6/7 language features via [Babel](https://babeljs.io/)
+- **Frictionlessly** load ES6, CommonJS, and AMD modules in the same app.
+- Load modules in other languages such as TypeScript
+- [Multiple loading strategies](https://github.com/jspm/jspm-cli/wiki/Production-Workflows) under one API.
   - individually, with external dependencies loading either from a same origin cache (`jspm_modules`) or from jspm.io HTTP/2 CDN, which proxies Github and NPM
   - as local factor bundles with [arithmetic](https://github.com/jspm/jspm-cli/wiki/Production-Workflows#creating-a-bundle-with-arithmetic) (`jspm bundle`)
   - as a monolithic/standalone bundle (`jspm bundle-sfx`)
@@ -49,6 +46,8 @@ jspm set-mode remote
 
 
 ## Tests
+
+[![Build Status](https://secure.travis-ci.org/edrex/hello-component.png?branch=master)](https://travis-ci.org/edrex/hello-systemjs)
 
 To run the tests: 
 
