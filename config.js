@@ -1,4 +1,5 @@
 System.config({
+  "defaultJSExtensions": true,
   "transpiler": "babel",
   "babelOptions": {
     "optional": [
@@ -7,16 +8,15 @@ System.config({
     "blacklist": []
   },
   "paths": {
-    "*": "*.js",
-    "github:*": "https://github.jspm.io/*.js",
-    "npm:*": "https://npm.jspm.io/*.js"
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
   }
 });
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.6.6",
-    "babel-runtime": "npm:babel-runtime@5.6.6",
+    "babel": "npm:babel-core@5.6.7",
+    "babel-runtime": "npm:babel-runtime@5.6.7",
     "bootstrap": "github:twbs/bootstrap@3.3.4",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.10",
@@ -81,7 +81,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.6.6": {
+    "npm:babel-runtime@5.6.7": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:buffer@3.2.2": {
