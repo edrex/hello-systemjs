@@ -15,11 +15,12 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.6.7",
-    "babel-runtime": "npm:babel-runtime@5.6.7",
+    "babel": "npm:babel-core@5.6.10",
+    "babel-runtime": "npm:babel-runtime@5.6.10",
     "bootstrap": "github:twbs/bootstrap@3.3.4",
     "core-js": "npm:core-js@0.9.18",
     "css": "github:systemjs/plugin-css@0.1.10",
+    "edrex/hello-component": "github:edrex/hello-component@0.1.7",
     "hello": "github:edrex/hello-component@0.1.7",
     "react": "npm:react@0.13.3",
     "github:edrex/hello-component@0.1.7": {
@@ -81,7 +82,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.6.7": {
+    "npm:babel-runtime@5.6.10": {
       "process": "github:jspm/nodelibs-process@0.1.1"
     },
     "npm:buffer@3.2.2": {
@@ -163,10 +164,8 @@ System.config({
       "inherits": "npm:inherits@2.0.1",
       "isarray": "npm:isarray@0.0.1",
       "process": "github:jspm/nodelibs-process@0.1.1",
-      "stream": "github:jspm/nodelibs-stream@0.1.0",
       "stream-browserify": "npm:stream-browserify@1.0.0",
-      "string_decoder": "npm:string_decoder@0.10.31",
-      "util": "github:jspm/nodelibs-util@0.1.0"
+      "string_decoder": "npm:string_decoder@0.10.31"
     },
     "npm:source-map@0.1.31": {
       "amdefine": "npm:amdefine@0.1.0",
