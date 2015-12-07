@@ -1,20 +1,18 @@
 System.config({
-  "defaultJSExtensions": true,
-  "transpiler": "babel",
-  "babelOptions": {
+  defaultJSExtensions: true,
+  transpiler: "babel",
+  babelOptions: {
     "optional": [
       "runtime"
     ],
     "blacklist": []
   },
-  "paths": {
+  paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
-  }
-});
+  },
 
-System.config({
-  "map": {
+  map: {
     "babel": "npm:babel-core@5.6.10",
     "babel-runtime": "npm:babel-runtime@5.6.10",
     "bootstrap": "github:twbs/bootstrap@3.3.4",
@@ -203,4 +201,3 @@ System.config({
     }
   }
 });
-

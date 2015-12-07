@@ -21,7 +21,6 @@
     "mocha": "^2.1.0"
   },
   "jspm": {
-    "directories": {},
     "dependencies": {
       "bootstrap": "github:twbs/bootstrap@^3.3.4",
       "css": "github:systemjs/plugin-css@^0.1.9",
